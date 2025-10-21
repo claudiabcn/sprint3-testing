@@ -6,7 +6,7 @@ function getAllDirectors(movies) {
   return undefined;
 }  
 let directors = movies.map(movie => movie.director)
-return directors;
+return [...new Set(directors)];
 }
 const directorsArray = getAllDirectors(movies);
 console.log("EXERCICE 1 ->", directorsArray);
@@ -33,7 +33,7 @@ let filmsFound = movies.filter(movie => movie.director === director);
 }  
   let scores = filmsFound.map(movie => movie.score);
     let totalScore = scores.reduce((acumul, val) => acumul+val, 0)
-  return totalScore/filmsFound.length
+  return parseFloat((totalScore / filmsFound.length).toFixed(2))
 }
 const averageScore = moviesAverageOfDirector(movies,"Christopher Nolan")
 console.log("EXERCICE 3 ->", averageScore)
@@ -46,16 +46,29 @@ function orderAlphabetically(movies) {
 }  
 let titles = movies.map(movie => movie.title)
 let sortedTitles= titles.sort((a,b)=>a.localeCompare(b))
-return sortedTitles;
+return sortedTitles.slice(0, 20);
 }
 const titlesArray = orderAlphabetically(movies);
 console.log("EXERCICE 4 ->", titlesArray);
 
 
-// Exercise 5: Order by year, ascending
-function orderByYear() {
-
+function orderByYear(movies) {
+  if (movies.length === 0) {
+  console.log(`No movies found`);
+  return undefined;
+}  
+let sortedMovies = [...movies]
+sortedMovies.sort((a, b) => {
+  if (a.year !== b.year) {
+    return a.year - b.year; 
+  }
+  return a.title.localeCompare(b.title); 
+});
+return sortedMovies; 
 }
+const yearsArray = orderByYear(movies);
+console.log("EXERCICE 5 ->", yearsArray);
+
 
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory() {
