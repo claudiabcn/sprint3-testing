@@ -1,4 +1,6 @@
-const movies = [
+
+
+export const movies = [
   {
     title: 'The Shawshank Redemption',
     year: 1994,

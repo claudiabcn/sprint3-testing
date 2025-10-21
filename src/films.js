@@ -1,22 +1,47 @@
-// Exercise 1: Get the array of all directors.
-function getAllDirectors(array) {
-  let result =  ???;
-  console.log("EXERCICE 1 ->", result);
-  return result;
-}
+import { movies } from './data.js';
 
-// Exercise 2: Get the films of a certain director
-function getMoviesFromDirector(array, director) {
- 
+function getAllDirectors(movies) {
+  if (movies.length === 0) {
+  console.log(`No movies found`);
+  return undefined;
+}  
+let directors = movies.map(movie => movie.director)
+return directors;
 }
+const directorsArray = getAllDirectors(movies);
+console.log("EXERCICE 1 ->", directorsArray);
 
-// Exercise 3: Calculate the average of the films of a given director.
-function moviesAverageOfDirector(array, director) {
-  
+
+function getMoviesFromDirector(movies, director) {
+let filmsFound = movies.filter(movie => movie.director === director)
+let titlesFound = filmsFound.map(movie => movie.title)
+  if (filmsFound.length === 0) {
+  console.log(`No director found: ${director}`);
+  return undefined;
+}  
+return titlesFound;
 }
+const moviesDirectedBy = getMoviesFromDirector(movies,"Christopher Nolan")
+console.log("EXERCICE 2 ->", moviesDirectedBy)
+
+
+function moviesAverageOfDirector(movies, director) {
+let filmsFound = movies.filter(movie => movie.director === director);
+  if (filmsFound.length === 0) {
+  console.log(`No movies found for director: ${director}`);
+  return undefined;
+}  
+  let scores = filmsFound.map(movie => movie.score);
+    let totalScore = scores.reduce((acumul, val) => acumul+val, 0)
+  return totalScore/filmsFound.length
+}
+const averageScore = moviesAverageOfDirector(movies,"Christopher Nolan")
+console.log("EXERCICE 3 ->", averageScore)
+
 
 // Exercise 4:  Alphabetic order by title 
 function orderAlphabetically(array) {
+
   
 }
 
