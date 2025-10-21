@@ -39,11 +39,18 @@ const averageScore = moviesAverageOfDirector(movies,"Christopher Nolan")
 console.log("EXERCICE 3 ->", averageScore)
 
 
-// Exercise 4:  Alphabetic order by title 
-function orderAlphabetically(array) {
-
-  
+function orderAlphabetically(movies) {
+  if (movies.length === 0) {
+  console.log(`No movies found`);
+  return undefined;
+}  
+let titles = movies.map(movie => movie.title)
+let sortedTitles= titles.sort((a,b)=>a.localeCompare(b))
+return sortedTitles;
 }
+const titlesArray = orderAlphabetically(movies);
+console.log("EXERCICE 4 ->", titlesArray);
+
 
 // Exercise 5: Order by year, ascending
 function orderByYear() {
