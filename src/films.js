@@ -90,14 +90,40 @@ if (averageGenre === undefined) {
 } else
   console.log('EXERCICE 6 -> The average of that movies is: ' + averageGenre);
 
-// Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {}
+function hoursToMinutes(movies) {
+  return movies.map((movie) => {
+    const parts = movie.duration.split(' ');
+    const hours = parseInt(parts[0]);
+    const minutes = parseInt(parts[1]);
+    const totalMinutes = hours * 60 + minutes;
+    return {
+      ...movie,
+      duration: totalMinutes
+    };
+  });
+}
+const moviesInMinutes = hoursToMinutes(movies);
+console.log('EXERCICE 7 -> Movies duration in minutes: ', moviesInMinutes);
 
-// Exercise 8: Get the best film of a year
-function bestFilmOfYear() {}
+function bestFilmOfYear(movies, year) {
+  const filmsOfYear = movies.filter(movie => movie.year === year);
 
-// The following is required to make unit tests work.
-/* Environment setup. Do not modify the below code. */
+  if (filmsOfYear.length === 0) {
+    return null
+  }
+  const bestFilm = filmsOfYear.reduce((best, current) => {
+    return current.score > best.score ? current : best;
+  }, filmsOfYear[0]);
+
+  return bestFilm;
+}
+const result = bestFilmOfYear(movies, 2001);
+if (result===null){
+  console.log("EXERCISE 8 -> There aren't films found in that year.")
+} else
+console.log('EXERCISE 8 -> The best film of the year is:', result);
+
+
 if (typeof module !== 'undefined') {
   module.exports = {
     getAllDirectors,
