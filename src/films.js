@@ -68,17 +68,18 @@ function moviesAverageByCategory(movies, genre) {
 
 function hoursToMinutes(movies) {
   return movies.map((movie) => {
-    const parts = movie.duration.split(' ');
-    const hours = parseInt(parts[0]);
-    const minutes = parseInt(parts[1]);
+    const hourMatch = movie.duration.match(/(\d+)h/);
+    const minuteMatch = movie.duration.match(/(\d+)m/);
+    const hours = hourMatch ? parseInt(hourMatch[1]) : 0;
+    const minutes = minuteMatch ? parseInt(minuteMatch[1]) : 0;
     const totalMinutes = hours * 60 + minutes;
+
     return {
       ...movie,
       duration: totalMinutes
     };
   });
 }
-
 function bestFilmOfYear(movies, year) {
   const filmsOfYear = movies.filter(movie => movie.year === year);
 
