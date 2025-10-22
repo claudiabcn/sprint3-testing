@@ -20,8 +20,8 @@ function getMoviesFromDirector(movies, director) {
   if (!validateMoviesArray(movies)) return [];
 
   let filmsFound = movies.filter((movie) => movie.director === director);
-  let titlesFound = filmsFound.map((movie) => movie.title);
-  return titlesFound;
+  let moviesFound = filmsFound.map((movie) => movie);
+  return moviesFound;
 }
 
 function moviesAverageOfDirector(movies, director) {
