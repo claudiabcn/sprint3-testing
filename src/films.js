@@ -58,8 +58,9 @@ function moviesAverageByCategory(movies, genre) {
   if (!validateMoviesArray(movies)) return [];
   let filmsFound = movies.filter((movie) => movie.genre.includes(genre));
   if (filmsFound.length === 0) {
-  return undefined;
+  return 0;
 }
+
   let scores = filmsFound.map((movie) => movie.score);
   let totalScore = scores.reduce((acumul, val) => acumul + val, 0);
   return parseFloat((totalScore / filmsFound.length).toFixed(2));
