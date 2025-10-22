@@ -1,5 +1,3 @@
-import { movies } from './data.js';
-
 function validateMoviesArray(movies) {
   if (!Array.isArray(movies)) {
     throw new TypeError('You need an array of movies');
@@ -17,8 +15,6 @@ function getAllDirectors(movies) {
   let directors = movies.map((movie) => movie.director);
   return [...new Set(directors)];
 }
-const directorsArray = getAllDirectors(movies);
-console.log('EXERCICE 1 -> The directors: ', directorsArray);
 
 function getMoviesFromDirector(movies, director) {
   if (!validateMoviesArray(movies)) return [];
@@ -27,25 +23,17 @@ function getMoviesFromDirector(movies, director) {
   let titlesFound = filmsFound.map((movie) => movie.title);
   return titlesFound;
 }
-const moviesDirectedBy = getMoviesFromDirector(movies, 'Christopher Nolan');
-console.log('EXERCICE 2 -> The movies directed by him: ', moviesDirectedBy);
 
 function moviesAverageOfDirector(movies, director) {
   if (!validateMoviesArray(movies)) return [];
   let filmsFound = movies.filter((movie) => movie.director === director);
   if (filmsFound.length === 0) {
-    console.log(`No movies found for director: ${director}`);
-    return undefined;
+      return undefined;
   }
   let scores = filmsFound.map((movie) => movie.score);
   let totalScore = scores.reduce((acumul, val) => acumul + val, 0);
   return parseFloat((totalScore / filmsFound.length).toFixed(2));
 }
-const averageScore = moviesAverageOfDirector(movies, 'Christopher Nolan');
-if (averageScore === undefined) {
-  console.log(`EXERCICE 3 -> Director not found`);
-} else
-  console.log('EXERCICE 3 -> The average of his movies is: ' + averageScore);
 
 function orderAlphabetically(movies) {
   if (!validateMoviesArray(movies)) return [];
@@ -53,11 +41,6 @@ function orderAlphabetically(movies) {
   let sortedTitles = titles.sort((a, b) => a.localeCompare(b));
   return sortedTitles.slice(0, 20);
 }
-const titlesArray = orderAlphabetically(movies);
-console.log(
-  'EXERCICE 4 -> First 20 movies ordered alphabetically:',
-  titlesArray
-);
 
 function orderByYear(movies) {
   if (!validateMoviesArray(movies)) return [];
@@ -70,25 +53,17 @@ function orderByYear(movies) {
   });
   return sortedMovies;
 }
-const yearsArray = orderByYear(movies);
-console.log('EXERCICE 5 ->Movies ordered by year: ', yearsArray);
 
 function moviesAverageByCategory(movies, genre) {
   if (!validateMoviesArray(movies)) return [];
   let filmsFound = movies.filter((movie) => movie.genre.includes(genre));
   if (filmsFound.length === 0) {
-    console.log(`No movies found for genre: ${genre}`);
-    return undefined;
-  }
+  return undefined;
+}
   let scores = filmsFound.map((movie) => movie.score);
   let totalScore = scores.reduce((acumul, val) => acumul + val, 0);
   return parseFloat((totalScore / filmsFound.length).toFixed(2));
 }
-const averageGenre = moviesAverageByCategory(movies, 'Drama');
-if (averageGenre === undefined) {
-  console.log(`EXERCICE 6 -> Genre not found`);
-} else
-  console.log('EXERCICE 6 -> The average of that movies is: ' + averageGenre);
 
 function hoursToMinutes(movies) {
   return movies.map((movie) => {
@@ -102,8 +77,6 @@ function hoursToMinutes(movies) {
     };
   });
 }
-const moviesInMinutes = hoursToMinutes(movies);
-console.log('EXERCICE 7 -> Movies duration in minutes: ', moviesInMinutes);
 
 function bestFilmOfYear(movies, year) {
   const filmsOfYear = movies.filter(movie => movie.year === year);
@@ -117,12 +90,6 @@ function bestFilmOfYear(movies, year) {
 
   return bestFilm;
 }
-const result = bestFilmOfYear(movies, 2001);
-if (result===null){
-  console.log("EXERCISE 8 -> There aren't films found in that year.")
-} else
-console.log('EXERCISE 8 -> The best film of the year is:', result);
-
 
 if (typeof module !== 'undefined') {
   module.exports = {

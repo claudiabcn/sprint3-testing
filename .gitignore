@@ -6,4 +6,3 @@ yarn.lock
 *.log
 test-results.html
 bundle.js
-pnpm-lock.yaml

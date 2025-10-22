@@ -385,4 +385,4 @@ describe('Function "bestFilmOfYear"', () => {
     ]);
   });
 
-});
+})
