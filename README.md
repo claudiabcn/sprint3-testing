@@ -9,7 +9,9 @@ Ensure the reliability of the JavaScript functions through comprehensive unit te
 
 ## 💻 Technology Stack:
 **JavaScript (ES6+):** Function development.
+
 **Jest:** Unit testing framework.
+
 **npm:** Execution of the test script.
 
 ## 📋 Files:
@@ -26,12 +28,14 @@ Ensure the reliability of the JavaScript functions through comprehensive unit te
 └── test-results.html
 ``` 
 
-## 🛠 Instalación:
+## 🛠 Installation:
 
 1. Clone the Repository: `git clone https://github.com/claudiabcn/sprint3-testing`
 
-2. Install Dependencies: 
+2. Install Dependencies:
+   
         `cd sprint3-testing`
+   
         `npm install`
 
 3. Run the Tests: `npm test`
@@ -39,8 +43,10 @@ Ensure the reliability of the JavaScript functions through comprehensive unit te
 ## 📸 Demo: 
 https://sprint3-testing-n9fe.vercel.app/
 
+![Sprint3-Demo](https://github.com/user-attachments/assets/a7b31160-f4c5-44ab-ad2d-4ffabade3f5a)
 
-## ⭐ Aprendizajes y retos encontrados:
+
+## ⭐ Learnings and challenges:
 
 I've learned to work better with array manipulation using methods like **map()**, **sort()**, **includes()**, and **filter()**.
 I was introduced to the world of **testing**, specifically how to execute tests in a project using **Jest**. 
