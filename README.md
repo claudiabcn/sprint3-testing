@@ -1,86 +1,54 @@
-# Sprint 3 IT Academy | Video management tool
+# ⚡️ SPRINT 3: JavaScript II and Testing
 
-## Introduction
+This sprint involves developing and unit testing a set of JavaScript functions for managing film data, using `npm test` with Jest.
 
-A company in the audiovisual sector has asked us for a web application that will allow their employees to quickly find movies from a large database they have, since the process is currently done manually.
+## 🎯 Objectives:
+Create a set of eight key functions for data analysis and sorting.
+Correctly apply array methods (map, filter, sort...).
+Ensure the reliability of the JavaScript functions through comprehensive unit testing with Jest.
 
-You will be in charge of setting up the core of the application: all the logic of filtering and sorting of movies. You have 2 weeks to finish, which is how long this sprint lasts.
+## 💻 Technology Stack:
+**JavaScript (ES6+):** Function development.
+**Jest:** Unit testing framework.
+**npm:** Execution of the test script.
 
-<br>
-
-## Requirements
-
-
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-sprint-3-movies
+## 📋 Files:
 ```
+├── src/
+│   ├── data.js
+│   ├── films.js
+│   └── index.html
+├── tests/
+│   └── films.spec.js
+├── .gitignore
+├── package.json
+├── README.md
+└── test-results.html
+``` 
 
-2. Unlink your repo from the itacademy repository
-```bash
-$ git remote rm origin
-```
+## 🛠 Instalación:
 
-3. Link your repo to the repository you have to create in your github account
-```bash
-$ git remote add origin <your repo name!>
-```
+1. Clone the Repository: `git clone https://github.com/claudiabcn/sprint3-testing`
 
-<br>
+2. Install Dependencies: 
+        `cd sprint3-testing`
+        `npm install`
 
-## Submission
+3. Run the Tests: `npm test`
 
-1. Upon completion, run the following commands:
-
-```bash
-$ git add .
-$ git commit -m "Sprint Solution"
-$ git push origin master
-```
-
-2. Create Pull Request.
-
-3. Upload the link to the virtual campus so that your mentor can correct it and give you feedback.
+## 📸 Demo: 
+https://sprint3-testing-n9fe.vercel.app/
 
 
+## ⭐ Aprendizajes y retos encontrados:
 
-<br>
+I've learned to work better with array manipulation using methods like **map()**, **sort()**, **includes()**, and **filter()**.
+I was introduced to the world of **testing**, specifically how to execute tests in a project using **Jest**. 
 
-## Introduction
+The main challenges were implementing a **sort()** function that orders films by year and, if the years are the same, by title.
+Also, converting the duration (Xh Ymin) to minutes in the `hoursToMinutes` function was a significant task.
 
-The statement of the exercise is available on the virtual campus.
+This third sprint has marked a significant leap in code quality and robustness thanks to the integration of **Testing** and the deep dive into **High-Level JavaScript Functions (map, filter, reduce)**.
 
-<br>
-
-## Tests!
-
-
-```shell
-$ npm install
-$ npm run test:watch
-```
-
-And last, open the generated `test-results.html` file with the "Live Server" VSCode extension to see test results.
-
-Apart from the statement, you will know exactly what you are asked to do by looking at the file `tests/films.spec.js`, all tests are already defined here!
-
-<br>
-
-## Instructions
-
-You have the following indications from the frontend responsible:
-
-- It is mandatory to implement all loops in ES6 (using map, reduce, filter and sort to manipulate arrays).
-
-- As at the moment we don't consume data from a server using an API, we will work with data from the src/data.js archive. For the moment we will implement the logic using
-an array of information about 250 movies.
-
-- The implementation is about processing this array of movies, to display it as requested in each exercise.
-
-- The logic to implement will be placed in the src/films.js file.
-
-- You don't need to show the result of each function on the screen. Your goal is to pass the tests.  More information on how to program oriented to pass tests at the end of the document.
-
-- Don't forget to include the capture of the test results in the virtual campus.
 
 

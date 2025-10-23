@@ -10,7 +10,6 @@ const {
   bestFilmOfYear,
 } = require('../src/films');
 
-// Exercise 1
 describe('Function "getAllDirectors"', () => {
   it('should be declared', () => {
     expect(typeof getAllDirectors).toBe('function');
@@ -50,7 +49,6 @@ describe('Function "getAllDirectors"', () => {
   });
 });
 
-// Exercise 2
 describe('Function "getMoviesFromDirector"', () => {
   it('should be declared', () => {
     expect(typeof getMoviesFromDirector).toBe('function');
@@ -97,7 +95,6 @@ describe('Function "getMoviesFromDirector"', () => {
 
 });
 
-// Exercise 3
 describe('Function "moviesAverageOfDirector"', () => {
   it('should be declared', () => {
     expect(typeof moviesAverageOfDirector).toBe('function');
@@ -142,7 +139,6 @@ describe('Function "moviesAverageOfDirector"', () => {
 
 });
 
-// Exercise 4
 describe('Function "orderAlphabetically"', () => {
   it('should be declared', () => {
     expect(typeof orderAlphabetically).toBe('function');
@@ -250,7 +246,6 @@ describe('Function "orderAlphabetically"', () => {
   });
 });
 
-// Exercise 5
 describe('Function "orderByYear"', () => {
   it('should be declared', () => {
     expect(typeof orderByYear).toBe('function');
@@ -290,8 +285,6 @@ describe('Function "orderByYear"', () => {
   });
 });
 
-// Exercise 6
-// YOUR CODE HERE. Test moviesAverageByCategory()
 describe('Function "moviesAverageByCategory"', () => {
   it('should be declared', () => {
     expect(typeof moviesAverageByCategory).toBe('function');
@@ -333,7 +326,6 @@ describe('Function "moviesAverageByCategory"', () => {
   });
 });
 
-// Exercise 7
 describe('Function "hoursToMinutes"', () => {
   it('should be declared', () => {
     expect(typeof hoursToMinutes).toBe('function');
@@ -367,7 +359,6 @@ describe('Function "hoursToMinutes"', () => {
   });
 });
 
-// Exercise 8
 describe('Function "bestFilmOfYear"', () => {
   it('should be declared', () => {
     expect(typeof bestFilmOfYear).toBe('function');
