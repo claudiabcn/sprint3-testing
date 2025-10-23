@@ -90,7 +90,7 @@ function bestFilmOfYear(movies, year) {
     return current.score > best.score ? current : best;
   }, filmsOfYear[0]);
 
-  return bestFilm;
+  return [bestFilm];
 }
 
 if (typeof module !== 'undefined') {
