@@ -41,7 +41,7 @@ Ensure the reliability of the JavaScript functions through comprehensive unit te
 3. Run the Tests: `npm test`
 
 ## 📸 Demo: 
-https://sprint3-testing-n9fe.vercel.app/
+[https://sprint3-testing-n9fe.vercel.app/](https://sprint3-testing-lfpgg9ycl-claudiabcns-projects.vercel.app/)
 
 ![Sprint3-Demo](https://github.com/user-attachments/assets/a7b31160-f4c5-44ab-ad2d-4ffabade3f5a)
 
